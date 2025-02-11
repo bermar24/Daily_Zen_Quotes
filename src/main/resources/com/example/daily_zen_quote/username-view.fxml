@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller">
+    <children>
+        <Text layoutX="143.0" layoutY="130.0" text="Welcome! Chose your username:  " wrappingWidth="316.3680114746094">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Text>
+        <TextField fx:id="inputField" layoutX="151.0" layoutY="187.0" prefHeight="26.0" prefWidth="299.0" promptText="Enter your Username" />
+        <Button fx:id="playBtn" layoutX="260.0" layoutY="254.0" onAction="#handlePlayButtonClick" prefHeight="46.0" prefWidth="82.0" text="Play">
+            <font>
+                <Font size="17.0" />
+            </font></Button>
+    </children>
+
+</AnchorPane>

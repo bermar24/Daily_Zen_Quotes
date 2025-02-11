@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.QuizController">
+   <children>
+      <Label fx:id="quote" layoutX="61.0" layoutY="74.0" prefHeight="78.0" prefWidth="481.0" text="Quote" />
+      <Button fx:id="opt1" layoutX="83.0" layoutY="234.0" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+       <Button fx:id="opt2" layoutX="324.0" layoutY="234.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+       <Button fx:id="opt3" layoutX="323.0" layoutY="152.0" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+       <Button fx:id="opt4" layoutX="83.0" layoutY="152.0" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+           <font>
+               <Font size="18.0" />
+           </font>
+       </Button>
+      <Button layoutX="270.0" layoutY="342.0" mnemonicParsing="false" text="Next" />
+      <Label layoutX="448.0" layoutY="22.0" prefHeight="40.0" prefWidth="120.0" text="Score:" />
+      <Label layoutX="45.0" layoutY="22.0" prefHeight="40.0" prefWidth="238.0" text="Username!" />
+   </children>
+</AnchorPane>
