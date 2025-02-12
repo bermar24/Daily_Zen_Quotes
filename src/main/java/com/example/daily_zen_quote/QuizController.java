@@ -11,13 +11,39 @@ import java.util.*;
 
 
 public class QuizController {
-    
     @FXML
-    public Label quote;
+    public Label userLabel;
     @FXML
-    public Button opt1, opt2, opt3, opt4;
+    private String username;
+    @FXML
+    private int score;
 
+    @FXML
+    private Label quote;
+    @FXML
+    private Button opt1, opt2, opt3, opt4;
+    @FXML
     private String correctAuthor;
+
+    @FXML
+    public Button nextBtn;
+    @FXML
+    public void nextBtn(ActionEvent actionEvent) {
+        loadQuestions();
+    }
+
+    public void impUser(String username) {
+        this.username = username;
+        setUser(username);
+    }
+
+    @FXML
+    public void setUser(String username) {
+//        this.username = username;
+        this.score = StoreManager.checkScore(username);
+        userLabel.setText(username + " you have a score of: " + String.valueOf(score));
+
+    }
 
     @FXML
     private void initialize(){
@@ -25,6 +51,8 @@ public class QuizController {
     }
 
     public void loadQuestions() {
+//        setUser(username);
+
         String[] quotesArray = fetchQuot.getQuotes();
         if (quotesArray.length == 0) {
             System.out.println("No quotes available.");
@@ -66,14 +94,17 @@ public class QuizController {
     
     @FXML
     public void opt2clicked(ActionEvent actionEvent) {
+        checkAnswer (opt2.getText());
     }
 
     @FXML
     public void opt3clicked(ActionEvent actionEvent) {
+        checkAnswer (opt3.getText());
     }
 
     @FXML
     public void opt4clicked(ActionEvent actionEvent) {
+        checkAnswer (opt4.getText());
     }
 
 
@@ -82,9 +113,14 @@ public class QuizController {
         if (answer.equals(correctAuthor)) {
             quote.setText("Correct! 🎉");
             quote.setStyle("-fx-text-fill: green;");
+            score = score + 10;
+            StoreManager.changeUserScore(username, score);
+
         } else {
             quote.setText("Almost! Try the next.");
             quote.setStyle("-fx-text-fill: red;");
         }
     }
+
+
 }

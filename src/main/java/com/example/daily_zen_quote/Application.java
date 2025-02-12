@@ -21,8 +21,8 @@ public class Application extends javafx.application.Application {
         scene.setFill(TRANSPARENT);
         stage.show();
 
-//        Controller controller = fxmlLoader.getController();
-//        controller.setStage(stage);
+        Controller controller = fxmlLoader.getController();
+        controller.setStage(stage);
     }
 
 

@@ -27,8 +27,8 @@
                <Font size="18.0" />
            </font>
        </Button>
-      <Button layoutX="270.0" layoutY="342.0" mnemonicParsing="false" text="Next" />
-      <Label layoutX="448.0" layoutY="22.0" prefHeight="40.0" prefWidth="120.0" text="Score:" />
-      <Label layoutX="45.0" layoutY="22.0" prefHeight="40.0" prefWidth="238.0" text="Username!" />
+      <Button fx:id="nextBtn" layoutX="291.0" layoutY="324.0" mnemonicParsing="false" onAction="#nextBtn" text="Next" />
+      <Label fx:id="userLabel" layoutX="45.0" layoutY="22.0" prefHeight="40.0" prefWidth="257.0" text="Username" />
+      <Label layoutX="276.0" layoutY="368.0" prefHeight="18.0" prefWidth="312.0" text="Inspirational quotes provided by ZenQuotes API" />
    </children>
 </AnchorPane>

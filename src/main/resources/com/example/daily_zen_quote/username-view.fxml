@@ -6,15 +6,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller">
     <children>
-        <Text layoutX="143.0" layoutY="130.0" text="Welcome! Chose your username:  " wrappingWidth="316.3680114746094">
+        <Text layoutX="57.0" layoutY="101.0" text="Welcome to Daily Zen Quote ! " wrappingWidth="464.3680114746094">
             <font>
-                <Font name="System Bold" size="18.0" />
+                <Font name="System Bold" size="31.0" />
             </font></Text>
         <TextField fx:id="inputField" layoutX="151.0" layoutY="187.0" prefHeight="26.0" prefWidth="299.0" promptText="Enter your Username" />
         <Button fx:id="playBtn" layoutX="260.0" layoutY="254.0" onAction="#handlePlayButtonClick" prefHeight="46.0" prefWidth="82.0" text="Play">
             <font>
                 <Font size="17.0" />
             </font></Button>
+      <Label layoutX="151.0" layoutY="152.0" prefHeight="35.0" prefWidth="173.0" text="Chose your username:  " />
     </children>
 
 </AnchorPane>
