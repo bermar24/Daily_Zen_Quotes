@@ -75,6 +75,9 @@ public class StoreManager {
 
     // Add a new user score
     public static void changeUserScore(String username, int newScore) {
+        if (Objects.equals(username, "Guest")) {
+            newScore = 0; // Ensure Guest user always has a score of 0
+        }
         List<UserScore> scores = loadScores();
         boolean userFound = false;
 

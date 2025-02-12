@@ -4,8 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
 
 import java.util.*;
 
@@ -41,7 +39,7 @@ public class QuizController {
     public void setUser(String username) {
 //        this.username = username;
         this.score = StoreManager.checkScore(username);
-        userLabel.setText(username + " you have a score of: " + String.valueOf(score));
+        userLabel.setText(username + " you have " + String.valueOf(score) + " gold coins");
 
     }
 
@@ -81,6 +79,8 @@ public class QuizController {
         Collections.shuffle(options);
 
         quote.setText(quoteText);
+        quote.setStyle("-fx-text-fill: black; -fx-font-weight: bold; -fx-font-size: 18px;");
+        activateBtn();
         opt1.setText(options.get(0));
         opt2.setText(options.get(1));
         opt3.setText(options.get(2));
@@ -90,36 +90,54 @@ public class QuizController {
     @FXML
     public void opt1clicked(ActionEvent actionEvent) {
         checkAnswer (opt1.getText());
+        blockBtn();
     }
-    
+
     @FXML
     public void opt2clicked(ActionEvent actionEvent) {
         checkAnswer (opt2.getText());
+        blockBtn();
     }
 
     @FXML
     public void opt3clicked(ActionEvent actionEvent) {
         checkAnswer (opt3.getText());
+        blockBtn();
     }
 
     @FXML
     public void opt4clicked(ActionEvent actionEvent) {
         checkAnswer (opt4.getText());
+        blockBtn();
     }
 
 
     @FXML
     public void checkAnswer(String answer) {
         if (answer.equals(correctAuthor)) {
-            quote.setText("Correct! 🎉");
-            quote.setStyle("-fx-text-fill: green;");
+            quote.setText("Correct! +10 gold coins !!!\nThe author is " + correctAuthor);
+            quote.setStyle("-fx-text-fill: green; -fx-font-weight: bold; -fx-font-size: 16px;");
             score = score + 10;
             StoreManager.changeUserScore(username, score);
+            setUser(username);
 
         } else {
-            quote.setText("Almost! Try the next.");
-            quote.setStyle("-fx-text-fill: red;");
+            quote.setText("Almost!\nThe author is " + correctAuthor + "! Try next.");
+            quote.setStyle("-fx-text-fill: red;  -fx-font-weight: bold; -fx-font-size: 16px;");
         }
+    }
+
+    private void blockBtn() {
+        opt1.setDisable(true);
+        opt2.setDisable(true);
+        opt3.setDisable(true);
+        opt4.setDisable(true);
+    }
+    private void activateBtn() {
+        opt1.setDisable(false);
+        opt2.setDisable(false);
+        opt3.setDisable(false);
+        opt4.setDisable(false);
     }
 
 

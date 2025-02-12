@@ -4,18 +4,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller">
-    <children>
-        <Text layoutX="57.0" layoutY="101.0" text="Welcome to Daily Zen Quote ! " wrappingWidth="464.3680114746094">
+<VBox alignment="CENTER" spacing="10.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller">
+    <AnchorPane>
+        <Text layoutX="15.0" layoutY="67.0" text="Welcome to Daily Zen Quote !" wrappingWidth="464.3680114746094">
             <font>
                 <Font name="System Bold" size="31.0" />
             </font></Text>
-        <TextField fx:id="inputField" layoutX="151.0" layoutY="187.0" prefHeight="26.0" prefWidth="299.0" promptText="Enter your Username" />
-        <Button fx:id="playBtn" layoutX="260.0" layoutY="254.0" onAction="#handlePlayButtonClick" prefHeight="46.0" prefWidth="82.0" text="Play">
+      <Label layoutX="87.0" layoutY="99.0" prefHeight="35.0" prefWidth="173.0" text="Chose your username:  " />
+        <TextField fx:id="inputField" layoutX="87.0" layoutY="134.0" prefHeight="26.0" prefWidth="299.0" promptText="Enter your Username" />
+        <Button fx:id="playBtn" layoutX="206.0" layoutY="183.0" onAction="#handlePlayButtonClick" prefHeight="46.0" prefWidth="82.0" text="Play">
             <font>
                 <Font size="17.0" />
             </font></Button>
-      <Label layoutX="151.0" layoutY="152.0" prefHeight="35.0" prefWidth="173.0" text="Chose your username:  " />
-    </children>
+    </AnchorPane>
 
-</AnchorPane>
+</VBox>

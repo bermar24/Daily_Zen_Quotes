@@ -4,31 +4,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.QuizController">
-   <children>
-      <Label fx:id="quote" layoutX="61.0" layoutY="74.0" prefHeight="78.0" prefWidth="481.0" text="Quote" />
-      <Button fx:id="opt1" layoutX="83.0" layoutY="234.0" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+<VBox alignment="CENTER" spacing="10.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.QuizController">
+   <AnchorPane>
+      <Label fx:id="userLabel" layoutX="83.0" layoutY="22.0" prefHeight="40.0" prefWidth="257.0" text="Username" />
+      <Label fx:id="quote" alignment="CENTER" layoutX="44.0" layoutY="62.0" maxWidth="500" prefHeight="78.0" prefWidth="550.0" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Quote" textAlignment="CENTER" wrapText="true" />
+       <Button fx:id="opt2" layoutX="315.0" layoutY="234.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-       <Button fx:id="opt2" layoutX="324.0" layoutY="234.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+      <Button fx:id="opt1" layoutX="58.0" layoutY="234.0" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-       <Button fx:id="opt3" layoutX="323.0" layoutY="152.0" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+       <Button fx:id="opt3" layoutX="315.0" layoutY="152.0" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-       <Button fx:id="opt4" layoutX="83.0" layoutY="152.0" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
+       <Button fx:id="opt4" layoutX="58.0" layoutY="152.0" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
            <font>
                <Font size="18.0" />
            </font>
        </Button>
-      <Button fx:id="nextBtn" layoutX="291.0" layoutY="324.0" mnemonicParsing="false" onAction="#nextBtn" text="Next" />
-      <Label fx:id="userLabel" layoutX="45.0" layoutY="22.0" prefHeight="40.0" prefWidth="257.0" text="Username" />
+      <Button fx:id="nextBtn" layoutX="271.0" layoutY="311.0" mnemonicParsing="false" onAction="#nextBtn" text="Next" />
       <Label layoutX="276.0" layoutY="368.0" prefHeight="18.0" prefWidth="312.0" text="Inspirational quotes provided by ZenQuotes API" />
-   </children>
-</AnchorPane>
+   </AnchorPane>
+</VBox>

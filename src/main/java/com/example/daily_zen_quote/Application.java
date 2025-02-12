@@ -14,7 +14,7 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("username-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Username");
         stage.setScene(scene);
 //        stage.initStyle(StageStyle.TRANSPARENT);
