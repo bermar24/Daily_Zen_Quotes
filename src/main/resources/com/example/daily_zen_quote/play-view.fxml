@@ -5,8 +5,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.QuizController">
 <VBox alignment="CENTER" prefHeight="380.0" prefWidth="580.0" spacing="10.0" stylesheets="@styles.css" StackPane.alignment="CENTER">
    <AnchorPane prefHeight="370.0" prefWidth="570.0">
@@ -34,13 +32,7 @@
        </Button>
       <Button fx:id="nextBtn" layoutX="270.0" layoutY="321.0" mnemonicParsing="false" onAction="#nextBtn" text="Next" />
       <Label layoutX="294.0" layoutY="383.0" prefHeight="18.0" prefWidth="312.0" text="Inspirational quotes provided by ZenQuotes API" />
-      <Button fx:id="restartBtn" text="Reset" contentDisplay="CENTER" layoutX="533.0" layoutY="29.0" mnemonicParsing="false" onAction="#restartBtn" prefHeight="30.0" prefWidth="55.0">
-<!--          <graphic>-->
-<!--              <ImageView fitWidth="30" fitHeight="30">-->
-<!--                  <Image url="/icons/cached_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg"/>-->
-<!--              </ImageView>-->
-<!--          </graphic>-->
-      </Button>
+      <Button fx:id="restartBtn" text="Reset" contentDisplay="CENTER" layoutX="533.0" layoutY="29.0" mnemonicParsing="false" onAction="#restartBtn" prefHeight="30.0" prefWidth="55.0"/>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>

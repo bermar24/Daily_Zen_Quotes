@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.*;
 
@@ -15,12 +14,35 @@ import java.util.*;
 public class QuizController {
     @FXML
     public Label userLabel;
-        @FXML
+    @FXML
     private String username;
     @FXML
     private int score;
+    public void impUser(String username) {
+        this.username = username;
+        setUser(username);
+    }
+    @FXML
+    public void setUser(String username) {
+        this.score = StoreManager.checkScore(username);
+        userLabel.setText(username + " you have " + String.valueOf(score) + " gold coins");
+    }
+
     @FXML
     public Button restartBtn;
+    public void restartBtn(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("username-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+
+            Stage stage = (Stage) restartBtn.getScene().getWindow();
+
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private Label quote;
@@ -36,27 +58,12 @@ public class QuizController {
         loadQuestions();
     }
 
-    public void impUser(String username) {
-        this.username = username;
-        setUser(username);
-    }
-
     @FXML
-    public void setUser(String username) {
-//        this.username = username;
-        this.score = StoreManager.checkScore(username);
-        userLabel.setText(username + " you have " + String.valueOf(score) + " gold coins");
-
-    }
-
-    @FXML
-    private void initialize(){
+    private void initialize() {
         loadQuestions();
     }
 
     public void loadQuestions() {
-//        setUser(username);
-
         String[] quotesArray = fetchQuot.getQuotes();
         if (quotesArray.length == 0) {
             System.out.println("No quotes available.");
@@ -95,28 +102,24 @@ public class QuizController {
 
     @FXML
     public void opt1clicked(ActionEvent actionEvent) {
-        checkAnswer (opt1.getText());
+        checkAnswer(opt1.getText());
         blockBtn();
     }
-
     @FXML
     public void opt2clicked(ActionEvent actionEvent) {
-        checkAnswer (opt2.getText());
+        checkAnswer(opt2.getText());
         blockBtn();
     }
-
     @FXML
     public void opt3clicked(ActionEvent actionEvent) {
-        checkAnswer (opt3.getText());
+        checkAnswer(opt3.getText());
         blockBtn();
     }
-
     @FXML
     public void opt4clicked(ActionEvent actionEvent) {
-        checkAnswer (opt4.getText());
+        checkAnswer(opt4.getText());
         blockBtn();
     }
-
 
     @FXML
     public void checkAnswer(String answer) {
@@ -139,6 +142,7 @@ public class QuizController {
         opt3.setDisable(true);
         opt4.setDisable(true);
     }
+
     private void activateBtn() {
         opt1.setDisable(false);
         opt2.setDisable(false);
@@ -146,21 +150,4 @@ public class QuizController {
         opt4.setDisable(false);
     }
 
-
-    public void restartBtn(ActionEvent actionEvent) {
-        try {
-            // Load the initial scene
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("username-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-
-            // Get the current stage
-            Stage stage = (Stage) restartBtn.getScene().getWindow();
-
-            // Set the new scene
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

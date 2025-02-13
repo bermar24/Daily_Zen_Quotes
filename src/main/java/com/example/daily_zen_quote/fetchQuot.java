@@ -3,8 +3,6 @@ package com.example.daily_zen_quote;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -43,6 +41,7 @@ public class fetchQuot {
         }
         return response.toString();
     }
+
     public static String[] extractQuotes(String jsonResponse) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();

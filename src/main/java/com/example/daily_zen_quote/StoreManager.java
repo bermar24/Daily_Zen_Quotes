@@ -2,7 +2,6 @@ package com.example.daily_zen_quote;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,15 +11,13 @@ import java.util.Objects;
 public class StoreManager {
     private static final String FILE_PATH = "scores.json";
 
-
-
     // Load scores from JSON file
     public static List<UserScore> loadScores() {
         ObjectMapper objectMapper = new ObjectMapper();
         File file = new File(FILE_PATH);
 
         if (!file.exists()) {
-            return new ArrayList<>(); // Return empty list if file doesn't exist
+            return new ArrayList<>();
         }
 
         try {
@@ -39,7 +36,7 @@ public class StoreManager {
         File directory = file.getParentFile();
 
         if (directory != null && !directory.exists()) {
-            directory.mkdirs(); // Create the directory if it does not exist
+            directory.mkdirs();
         }
 
         try {
@@ -56,12 +53,11 @@ public class StoreManager {
         saveScores(scores);
     }
 
-
     public static int checkScore(String username) {
         if (Objects.equals(username, "Guest")) {
             return 0;
         } else {
-                List<UserScore> scores = loadScores(); // Load all scores
+                List<UserScore> scores = loadScores();
 
                 for (UserScore user : scores) {
                     if (user.getUsername().equalsIgnoreCase(username)) {
@@ -76,7 +72,7 @@ public class StoreManager {
     // Add a new user score
     public static void changeUserScore(String username, int newScore) {
         if (Objects.equals(username, "Guest")) {
-            newScore = 0; // Ensure Guest user always has a score of 0
+            newScore = 0;
         }
         List<UserScore> scores = loadScores();
         boolean userFound = false;

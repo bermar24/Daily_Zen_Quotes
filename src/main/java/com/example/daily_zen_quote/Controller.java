@@ -1,21 +1,16 @@
 package com.example.daily_zen_quote;
 
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.Objects;
-
 public class Controller {
     @FXML
     private TextField inputField;
     @FXML
     public Button playBtn;
-
     @FXML
     private String username;
 
@@ -34,10 +29,9 @@ public class Controller {
         try {
             saveUsername();
 
-            // Close the current stage
+            // Load new scene
             Stage thisStage = (Stage) playBtn.getScene().getWindow();
 
-            // Load new scene
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("play-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
 
