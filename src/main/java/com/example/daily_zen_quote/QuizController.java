@@ -2,19 +2,25 @@ package com.example.daily_zen_quote;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.*;
 
 
 public class QuizController {
     @FXML
     public Label userLabel;
-    @FXML
+        @FXML
     private String username;
     @FXML
     private int score;
+    @FXML
+    public Button restartBtn;
 
     @FXML
     private Label quote;
@@ -141,4 +147,20 @@ public class QuizController {
     }
 
 
+    public void restartBtn(ActionEvent actionEvent) {
+        try {
+            // Load the initial scene
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("username-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+
+            // Get the current stage
+            Stage stage = (Stage) restartBtn.getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

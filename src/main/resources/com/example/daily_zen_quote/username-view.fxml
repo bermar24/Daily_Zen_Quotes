@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="10.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller">
-    <AnchorPane>
-        <Text layoutX="15.0" layoutY="67.0" text="Welcome to Daily Zen Quote !" wrappingWidth="464.3680114746094">
-            <font>
-                <Font name="System Bold" size="31.0" />
-            </font></Text>
-      <Label layoutX="87.0" layoutY="99.0" prefHeight="35.0" prefWidth="173.0" text="Chose your username:  " />
-        <TextField fx:id="inputField" layoutX="87.0" layoutY="134.0" prefHeight="26.0" prefWidth="299.0" promptText="Enter your Username" />
-        <Button fx:id="playBtn" layoutX="206.0" layoutY="183.0" onAction="#handlePlayButtonClick" prefHeight="46.0" prefWidth="82.0" text="Play">
-            <font>
-                <Font size="17.0" />
-            </font></Button>
-    </AnchorPane>
-
-</VBox>
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller">
+    <VBox alignment="CENTER" prefHeight="380.0" prefWidth="580.0" spacing="10.0" stylesheets="@styles.css" StackPane.alignment="CENTER">
+        <AnchorPane prefHeight="370.0" prefWidth="570.0">
+            <Label layoutX="110.0" layoutY="145.0" prefHeight="35.0" prefWidth="173.0" text="Chose your username:  " />
+            <TextField fx:id="inputField" layoutX="110.0" layoutY="180.0" prefHeight="26.0" prefWidth="340.0" promptText="Enter your Username" />
+            <Text fx:id="title" layoutX="54.0" layoutY="104.0" text="Welcome to Daily Zen Quote !" wrappingWidth="457.3680114746094" />
+            <Button fx:id="playBtn" defaultButton="true" layoutX="239.0" layoutY="268.0" onAction="#handlePlayButtonClick" prefHeight="46.0" prefWidth="82.0" text="Play">
+                <font>
+                    <Font size="17.0" />
+                </font>
+            </Button>
+        </AnchorPane>
+      <padding>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <StackPane.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </StackPane.margin>
+    </VBox>
+</StackPane>

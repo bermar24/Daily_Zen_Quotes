@@ -1,7 +1,31 @@
-.my-label {
-    -fx-font-size: 20px;
-    -fx-text-fill: white;
-    -fx-background-color: #3498db;
+.root {
+
+    /*-fx-text-fill: white;*/
+    /*-fx-background-image: url("/src/main/icons/lake-2608425_1280.jpg");*/
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    /*-fx-background-color: rgba(255, 255, 255, 0.2); !* White background with 0.2 opacity *!*/
+    -fx-background-size: cover;
     -fx-padding: 10px;
     -fx-border-radius: 5px;
+}
+
+#title {
+    -fx-font-family: "Parisienne";
+    -fx-font-size: 30px;
+}
+Button {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 4);
+    -fx-padding: 10px;
+}
+#playBtn {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#restartBtn {
+    /*-fx-background-image: url("/icons/cached_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg");*/
+    /*-fx-background-color: transparent;*/
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }

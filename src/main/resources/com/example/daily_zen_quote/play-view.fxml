@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="10.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.QuizController">
-   <AnchorPane>
-      <Label fx:id="userLabel" layoutX="83.0" layoutY="22.0" prefHeight="40.0" prefWidth="257.0" text="Username" />
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.QuizController">
+<VBox alignment="CENTER" prefHeight="380.0" prefWidth="580.0" spacing="10.0" stylesheets="@styles.css" StackPane.alignment="CENTER">
+   <AnchorPane prefHeight="370.0" prefWidth="570.0">
+      <Label fx:id="userLabel" layoutX="58.0" layoutY="28.0" prefHeight="40.0" prefWidth="257.0" text="Username" />
       <Label fx:id="quote" alignment="CENTER" layoutX="44.0" layoutY="62.0" maxWidth="500" prefHeight="78.0" prefWidth="550.0" style="-fx-font-weight: bold; -fx-font-size: 18px;" text="Quote" textAlignment="CENTER" wrapText="true" />
        <Button fx:id="opt2" layoutX="315.0" layoutY="234.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="68.0" prefWidth="218.0" text="Button">
          <font>
@@ -28,7 +32,21 @@
                <Font size="18.0" />
            </font>
        </Button>
-      <Button fx:id="nextBtn" layoutX="271.0" layoutY="311.0" mnemonicParsing="false" onAction="#nextBtn" text="Next" />
-      <Label layoutX="276.0" layoutY="368.0" prefHeight="18.0" prefWidth="312.0" text="Inspirational quotes provided by ZenQuotes API" />
+      <Button fx:id="nextBtn" layoutX="270.0" layoutY="321.0" mnemonicParsing="false" onAction="#nextBtn" text="Next" />
+      <Label layoutX="294.0" layoutY="383.0" prefHeight="18.0" prefWidth="312.0" text="Inspirational quotes provided by ZenQuotes API" />
+      <Button fx:id="restartBtn" text="Reset" contentDisplay="CENTER" layoutX="533.0" layoutY="29.0" mnemonicParsing="false" onAction="#restartBtn" prefHeight="30.0" prefWidth="55.0">
+<!--          <graphic>-->
+<!--              <ImageView fitWidth="30" fitHeight="30">-->
+<!--                  <Image url="/icons/cached_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg"/>-->
+<!--              </ImageView>-->
+<!--          </graphic>-->
+      </Button>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
    </AnchorPane>
+      <StackPane.margin>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </StackPane.margin>
 </VBox>
+</StackPane>
