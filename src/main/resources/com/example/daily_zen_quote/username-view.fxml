@@ -5,8 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller">
-    <VBox alignment="CENTER" prefHeight="380.0" prefWidth="580.0" spacing="10.0" stylesheets="@styles.css" StackPane.alignment="CENTER">
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.daily_zen_quote.Controller" alignment="CENTER">
+    <VBox alignment="CENTER" prefHeight="380.0" prefWidth="580.0" spacing="10.0" stylesheets="@styles.css">
         <AnchorPane prefHeight="370.0" prefWidth="570.0">
             <Label layoutX="110.0" layoutY="145.0" prefHeight="35.0" prefWidth="173.0" text="Chose your username:" />
             <TextField fx:id="inputField" layoutX="110.0" layoutY="180.0" prefHeight="26.0" prefWidth="340.0" promptText="Enter your Username" />
