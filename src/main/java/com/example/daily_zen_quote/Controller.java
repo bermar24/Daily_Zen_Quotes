@@ -29,13 +29,11 @@ public class Controller {
         try {
             saveUsername();
 
-            // Load new scene
             Stage thisStage = (Stage) playBtn.getScene().getWindow();
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("play-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
 
-            // Get the controller of the new scene
             QuizController quizController = fxmlLoader.getController();
             quizController.impUser(username);
 

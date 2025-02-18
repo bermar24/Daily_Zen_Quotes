@@ -11,7 +11,6 @@ import java.util.Objects;
 public class StoreManager {
     private static final String FILE_PATH = "scores.json";
 
-    // Load scores from JSON file
     public static List<UserScore> loadScores() {
         ObjectMapper objectMapper = new ObjectMapper();
         File file = new File(FILE_PATH);
@@ -29,7 +28,6 @@ public class StoreManager {
         }
     }
 
-    // Save scores to JSON file
     public static void saveScores(List<UserScore> scores) {
         ObjectMapper objectMapper = new ObjectMapper();
         File file = new File(FILE_PATH);
@@ -46,7 +44,6 @@ public class StoreManager {
         }
     }
 
-    // Add a new user score
     public static void addUserScore(String username, int score) {
         List<UserScore> scores = loadScores();
         scores.add(new UserScore(username, score));
@@ -69,7 +66,6 @@ public class StoreManager {
     }
         }
 
-    // Add a new user score
     public static void changeUserScore(String username, int newScore) {
         if (Objects.equals(username, "Guest")) {
             newScore = 0;
